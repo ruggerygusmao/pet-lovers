@@ -11,14 +11,16 @@ import logo from "../../img/logo.jpeg"
                 </Logo>
                 
                 <Form>
-                    <label>Usuário</label>
-                    <input type="text" name="user" id="user" />
+                    <label>E-mail</label>
+                    <input type="email" name="email" id="email" required/>
 
                     <label>Senha</label>
-                    <input type="password" name="password" id="password" />
+                    <input type="password" name="password" id="password" required/>
 
-                    <button>Entrar</button>
-
+                    <button>
+                        <Link to="/home">Entrar</Link>
+                    </button>
+                    
                     <Link to="/cadastrar">Cadastre-se já</Link>
                 </Form>
             </Container>

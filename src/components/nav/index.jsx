@@ -7,7 +7,8 @@ export default function Nav(){
         <>
             <NavB>
                 <ul>
-                    <li>Home</li>
+                    <li><Link to="/home">Home</Link></li>
+                    <li><Link to="/meusPets">Meus Pets</Link></li>
                     <li> <Link to="/">Sair</Link></li>
                 </ul>
             </NavB>

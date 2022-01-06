@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div `
     display: flex;
     height: 100vh;
-    //background-color: violet;
     justify-content: center;
     align-items: center;
     
@@ -23,6 +22,7 @@ export const Form = styled.form `
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    padding: 10px;
     border-radius: 10px;
     width: 300px;
 

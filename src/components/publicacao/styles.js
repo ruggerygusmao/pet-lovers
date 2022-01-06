@@ -10,11 +10,7 @@ export const Container = styled.div `
         article{
             display: flex;
             flex-direction: column;
-        }<nav>
-                <ul>
-                    <li>Sair</li>
-                </ul>
-            </nav>
+        }
 `;
 
 export const Item = styled.article `

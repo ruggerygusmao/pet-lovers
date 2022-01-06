@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import logo from '../../img/logo.jpeg';
 import {Container, Img, Item} from './styles';
 
-export default function Publicacao(){
+export default function Publicacao(props){
+    const [exibirBotoes] = useState(props.botoes);
+    
+    
     return(
         <>
             <Container>
@@ -21,7 +24,7 @@ export default function Publicacao(){
                     </div>
                     <div>
                         <label>Endereço entrega</label>
-                        <input type="text" value="2 anos" name="endereco" id="endereco" />
+                        <input type="text" value="" name="endereco" id="endereco" />
                     </div>
                     <div>
                         <label>Descrição</label>
@@ -29,13 +32,17 @@ export default function Publicacao(){
                         </textarea>
                    </div>
                 </Item>
+               
                 <Img>
                     <img src={logo} alt="logo" />
+                    {exibirBotoes ?                     
                     <div>
                         <button>Editar</button>
                         <button>Remover</button>
                    </div>
+                    :null}
                 </Img>
+                
             </Container>
         </>
     );
