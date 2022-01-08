@@ -1,26 +1,44 @@
-import React from "react";
-import {Form, Logo, Container} from './styles';
+import React, { useState } from 'react';
+import { Form, Logo, Container } from './styles';
 import { Link } from "react-router-dom";
-import logo from "../../img/logo.jpeg"
- export default function Login(){
-    return(
+import logo from "../../img/logo.jpeg";
+import { axiosApi } from '../../services/axios';
+
+export default function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const handleSubmit = async ev => {
+        ev.preventDefault();
+        try {
+            const response = await axiosApi.post('login', {
+                "email": email,
+                "password": password,
+            });
+            const { token } = response.data.data;
+            localStorage.setItem('token', token);
+            axiosApi.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            window.location = "/home";
+        } catch (error) {
+            console.log(error)
+        }
+    };
+
+    return (
         <>
             <Container>
                 <Logo>
                     <img src={logo} alt="logo" />
                 </Logo>
-                
-                <Form>
+
+                <Form onSubmit={handleSubmit}>
                     <label>E-mail</label>
-                    <input type="email" name="email" id="email" required/>
+                    <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)} required />
 
                     <label>Senha</label>
-                    <input type="password" name="password" id="password" required/>
+                    <input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)} required />
 
-                    <button>
-                        <Link to="/home">Entrar</Link>
-                    </button>
-                    
+                    <button type="submit">Entrar</button>
+
                     <Link to="/cadastrar">Cadastre-se já</Link>
                 </Form>
             </Container>

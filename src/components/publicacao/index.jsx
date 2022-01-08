@@ -1,26 +1,29 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import logo from '../../img/logo.jpeg';
-import {Container, Img, Item} from './styles';
+import { Container, Img, Item } from './styles';
 
-export default function Publicacao(props){
+export default function Publicacao(props) {
     const [exibirBotoes] = useState(props.botoes);
-    
-    
-    return(
+    const { name, photo_url } = props;
+
+    return (
         <>
             <Container>
                 <Item>
                     <div>
                         <label>Raça</label>
-                        <input type="text" value="Pitbul" name="raca" id="raca" />
+                        <input type="text" value={name} name="raca" id="raca" />
+                    </div><div>
+                        <label>Raça</label>
+                        <input type="text" value="" name="raca" id="raca" />
                     </div>
                     <div>
                         <label>Idade</label>
-                        <input type="text" value="2 anos" name="idade" id="idade" />
+                        <input type="text" value="" name="idade" id="idade" />
                     </div>
                     <div>
                         <label>Vacinado</label>
-                        <input type="text" value="Sim" name="vacina" id="vacina" />
+                        <input type="text" value="" name="vacina" id="vacina" />
                     </div>
                     <div>
                         <label>Endereço entrega</label>
@@ -28,21 +31,21 @@ export default function Publicacao(props){
                     </div>
                     <div>
                         <label>Descrição</label>
-                        <textarea name="descricao" id="descricao" value="testando" cols="30" rows="5">
+                        <textarea name="descricao" id="descricao" value="" cols="30" rows="5">
                         </textarea>
-                   </div>
+                    </div>
                 </Item>
-               
+
                 <Img>
-                    <img src={logo} alt="logo" />
-                    {exibirBotoes ?                     
-                    <div>
-                        <button>Editar</button>
-                        <button>Remover</button>
-                   </div>
-                    :null}
+                    <img src={photo_url ?? logo} alt="Pet" />
+                    {exibirBotoes &&
+                        <div>
+                            <button>Editar</button>
+                            <button>Remover</button>
+                        </div>
+                    }
                 </Img>
-                
+
             </Container>
         </>
     );
