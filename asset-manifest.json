@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pet-lovers/static/css/main.abd64e84.css",
-    "main.js": "/pet-lovers/static/js/main.40195cff.js",
+    "main.js": "/pet-lovers/static/js/main.844cf5fd.js",
     "static/media/logo.jpeg": "/pet-lovers/static/media/logo.1cbc29d9f25b1626ce4f.jpeg",
     "static/media/cadastrar.jpg": "/pet-lovers/static/media/cadastrar.b302418ceaed8ee50d5b.jpg",
     "index.html": "/pet-lovers/index.html",
     "main.abd64e84.css.map": "/pet-lovers/static/css/main.abd64e84.css.map",
-    "main.40195cff.js.map": "/pet-lovers/static/js/main.40195cff.js.map"
+    "main.844cf5fd.js.map": "/pet-lovers/static/js/main.844cf5fd.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.40195cff.js"
+    "static/js/main.844cf5fd.js"
   ]
 }
