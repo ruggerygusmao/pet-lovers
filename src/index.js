@@ -11,7 +11,7 @@ import MeusPets from './components/meusPets';
 ReactDOM.render(
   <BrowserRouter>
      <Routes>
-      <Route path="pet-lovers" element={<App />} />
+      <Route path="/" element={<App />} />
       <Route path="/cadastrar" element={<Cadastrar />} />
       <Route path="/home" element={<Home/>} />
       <Route path="/cadastrarPet" element={<CadastrarPet/>} />
