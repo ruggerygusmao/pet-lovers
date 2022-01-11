@@ -1,21 +1,38 @@
-import React, { useState } from 'react';
-import logo from '../../img/logo.jpeg';
+import React, { useState, useEffect } from 'react';
 import { Container, Img, Item } from './styles';
+import { axiosApi } from '../../services/axios';
+//import { useNavigate } from 'react-router-dom';
 
 export default function Publicacao(props) {
-    const [exibirBotoes] = useState(props.botoes);
-    const { name, photo_url } = props;
-
+    ///const { name, photo_url,id } = props;
+    ///const {key, setKey} = useState("");
+    //const navigate = useNavigate();
+   
+        const [pets, setPets] = useState([]);
+        useEffect(() => {
+            const fetchPets = async () => {
+                const response = await axiosApi.get('pets');
+                const { data } = response.data;
+                setPets(data);
+            };
+            fetchPets();
+        }, []);
+    
+    const deletePet = (key)=>{
+        axiosApi.delete(`https://de-um-lar-seu-pet-backend.herokuapp.com/api/pets/${key}`);
+        //navigate("/home");
+    };
+                 
     return (
         <>
+        {pets.map((pet) =>{
+                    return(
             <Container>
+            
                 <Item>
                     <div>
                         <label>Raça</label>
-                        <input type="text" value={name} name="raca" id="raca" />
-                    </div><div>
-                        <label>Raça</label>
-                        <input type="text" value="" name="raca" id="raca" />
+                        <input type="text" value={pet.name} name="raca" id="raca" />
                     </div>
                     <div>
                         <label>Idade</label>
@@ -37,16 +54,16 @@ export default function Publicacao(props) {
                 </Item>
 
                 <Img>
-                    <img src={photo_url ?? logo} alt="Pet" />
-                    {exibirBotoes &&
+                    <img src={pet.photo_url} alt="img-pet"/>
                         <div>
                             <button>Editar</button>
-                            <button>Remover</button>
+                            <button onClick={()=>{deletePet(pet.id)}}>Remover</button>
+                           
                         </div>
-                    }
-                </Img>
-
+                </Img> 
             </Container>
+                    )}
+        )}
         </>
     );
 }

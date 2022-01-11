@@ -36,13 +36,18 @@ export const Item = styled.article `
 `;
 
 export const Img = styled.div `
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         img{
             width: 20vw;
+            height: 35vh;
+            border-radius: 7px;
         }
         div{
             display: flex;
             justify-content: center;
-
+           
             button{
                 margin: 0 0 15px 7px;
                 background-color: pink;
