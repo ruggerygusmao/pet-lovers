@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Form, Logo, Container } from './styles';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../img/logo.jpeg";
 import { axiosApi } from '../../services/axios';
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate()
     const handleSubmit = async ev => {
         ev.preventDefault();
         try {
@@ -17,7 +18,8 @@ export default function Login() {
             const { token } = response.data.data;
             localStorage.setItem('token', token);
             axiosApi.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-            window.location = "/home";
+            //window.location = "/home";
+            navigate("/home");
         } catch (error) {
             console.log(error)
         }
