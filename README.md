@@ -1,6 +1,10 @@
 # pet-lovers
-Projeto realizado para disciplina Prática Profissional
-Curso: Análise e Desenvolvimento de Sistemas
+## Projeto realizado para disciplina Prática Profissional
+### Curso: Análise e Desenvolvimento de Sistemas
+
+### Colaboradores: Ruggery Gusmao, Thiago Silva Leo Lemos
+
+<img src="./src/img/print.jpeg"/>
 
 # Getting Started with Create React App
 
