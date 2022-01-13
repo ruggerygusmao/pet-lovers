@@ -14,7 +14,7 @@ export const Container = styled.div `
 `;
 
 export const Item = styled.article `
-
+        box-sizing: border-box;
         div{
             display: flex;
             flex-direction: column; 
@@ -40,8 +40,8 @@ export const Img = styled.div `
         flex-direction: column;
         justify-content: space-between;
         img{
-            width: 20vw;
-            height: 35vh;
+            width: 100%;
+            height: 50%;
             border-radius: 7px;
         }
         div{

@@ -30,6 +30,9 @@ export default function Login() {
             <Container>
                 <Logo>
                     <img src={logo} alt="logo" />
+                    <div>
+                        Não abandone! Anuncie já em nossa plataforma e coloque seu pet para doação...
+                    </div>
                 </Logo>
 
                 <Form onSubmit={handleSubmit}>

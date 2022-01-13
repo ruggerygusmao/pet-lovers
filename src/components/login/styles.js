@@ -11,7 +11,10 @@ export const Container = styled.div `
 export const Logo = styled.div `
         margin: 0 auto;
         img{
-            width: 50vw;
+            width: 35vw;
+        }
+        div{
+            color: red;
         }
 `;
 
